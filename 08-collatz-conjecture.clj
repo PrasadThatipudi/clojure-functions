@@ -5,4 +5,8 @@
 ;; Count how many steps it takes to reach 1.
 ;; Example: n = 7 -> 7,22,11,34,17,52,26,13,40,20,10,5,16,8,4,2,1 (16 steps)
 
-(defn collatz-steps [number])
+(defn collatz-steps [number]
+  (loop [counter 1 current-number number]
+    (cond (= current-number 1) counter)))
+
+(print (collatz-steps 1))
