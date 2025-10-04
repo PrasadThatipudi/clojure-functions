@@ -12,7 +12,9 @@
     (< number 2) false
     (even? number) false
     :else (loop [divisor 3]
-            (if (<= number divisor) true
-                (if (divisible? number divisor) false (recur (+ number 2)))))))
+            (cond
+              (<= number divisor) true
+              (divisible? number divisor) false
+              :else (recur (+ number 2))))))
 
 (print (is-prime 15))
