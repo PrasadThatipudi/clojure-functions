@@ -4,4 +4,10 @@
 ;; Implement this using iteration (not the mathematical formula digit_root = 1 + (n-1) % 9).
 ;; Example: 9875 -> 9+8+7+5 = 29 -> 2+9 = 11 -> 1+1 = 2, so digital root is 2
 
-(defn digital-root [number])
+(defn digit? [number] (and (<= number 9) (>= number 0)))
+
+(defn digital-root [number]
+  (loop []
+    (cond (digit? number) number)))
+
+(print (digital-root 10))
