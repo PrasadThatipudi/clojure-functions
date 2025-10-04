@@ -6,7 +6,9 @@
 ;; Example: n = 7 -> 7,22,11,34,17,52,26,13,40,20,10,5,16,8,4,2,1 (16 steps)
 
 (defn collatz-steps [number]
-  (loop [counter 1 current-number number]
-    (cond (= current-number 1) counter)))
+  (loop [counter 0 current-number number]
+    (cond (= current-number 1) counter
+          (even? current-number) (recur (inc counter) (/ current-number 2))
+          :else (recur (inc counter) (+ (* current-number 3) 1)))))
 
-(print (collatz-steps 1))
+(print (collatz-steps 7))
