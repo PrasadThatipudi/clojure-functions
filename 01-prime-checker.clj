@@ -6,7 +6,7 @@
 
 (defn divisible? [number divisor] (= (mod number divisor) 0))
 
-(defn is-prime [number]
+(defn prime? [number]
   (cond
     (= number 2) true
     (< number 2) false
@@ -17,4 +17,4 @@
               (divisible? number divisor) false
               :else (recur (+ number 2))))))
 
-(print (is-prime 15))
+(print (prime? 15))
