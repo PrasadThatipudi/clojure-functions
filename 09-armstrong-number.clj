@@ -3,5 +3,5 @@
 ;; For example, 153 has 3 digits, and 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153.
 ;; First count the digits, then calculate the sum of each digit raised to that power.
 ;; Example: 9474 -> 4 digits -> 9^4 + 4^4 + 7^4 + 4^4 = 6561 + 256 + 2401 + 256 = 9474 (true)
-(def n 9474)
-;; START YOUR CODE AFTER THIS LINE. DO NOT REMOVE THIS LINE
+
+(defn armstrong-number? [number])

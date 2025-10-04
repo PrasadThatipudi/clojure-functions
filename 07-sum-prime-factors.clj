@@ -4,5 +4,5 @@
 ;; If n = 30, prime factors are 2, 3, and 5, so sum = 10.
 ;; Implement efficient prime factorization and ensure each prime is counted only once.
 ;; Example: 60 -> prime factors: 2,3,5 -> sum = 10, 17 -> 17 (itself is prime)
-(def n 60)
-;; START YOUR CODE AFTER THIS LINE. DO NOT REMOVE THIS LINE
+
+(defn sum-of-prime-factors [number])

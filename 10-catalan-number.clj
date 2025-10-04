@@ -4,5 +4,5 @@
 ;; Alternatively: C(0)=1, and C(n) = sum from i=0 to n-1 of C(i)*C(n-1-i)
 ;; Implement using the recursive formula with memoization for efficiency.
 ;; Example: C(4) = 14, C(5) = 42, C(0) = 1, C(1) = 1, C(2) = 2, C(3) = 5
-(def n 4)
-;; START YOUR CODE AFTER THIS LINE. DO NOT REMOVE THIS LINE
+
+(defn catalan-number [n])
