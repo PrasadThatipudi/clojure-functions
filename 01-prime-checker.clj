@@ -4,9 +4,15 @@
 ;; The function should return true if the number is prime, false otherwise.
 ;; Example: 17 -> true, 25 -> false, 2 -> true, 1 -> false
 
+(defn divisible? [number divisor] (= (mod number divisor) 0))
+
 (defn is-prime [number]
   (if (<= number 2)
     (if (= number 2) true false)
-    (if (even? number) false true)))
+    (if (even? number)
+      false
+      (loop [divisor 3]
+        (if (<= number divisor) true
+            (if (divisible? number divisor) false (recur (+ divisor 2))))))))
 
-(print (is-prime 2))
+(print (is-prime 13))
