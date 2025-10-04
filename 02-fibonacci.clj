@@ -4,4 +4,9 @@
 ;; Consider both iterative and recursive approaches, but choose the most efficient one.
 ;; Example: n = 7 -> 13 (sequence: 0,1,1,2,3,5,8,13), n = 0 -> 0, n = 1 -> 1
 
-(defn fibonacci [n])
+(defn fibonacci [number]
+  (loop [first 0 second 1 counter 1]
+    (if (= number counter) first
+        (recur second (+ first second) (inc counter)))))
+
+(print (fibonacci 8))
