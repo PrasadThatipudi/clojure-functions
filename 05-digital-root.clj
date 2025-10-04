@@ -6,8 +6,18 @@
 
 (defn digit? [number] (and (<= number 9) (>= number 0)))
 
-(defn digital-root [number]
-  (loop []
-    (cond (digit? number) number)))
+(defn div [dividend divisor] (/ (- dividend (mod dividend divisor)) divisor))
 
-(print (digital-root 10))
+(defn sum-of-digits [number]
+  (loop [remaining-number number sum 0]
+    (cond (<= remaining-number 0) sum
+          :else (recur
+                 (div remaining-number 10)
+                 (+ sum (mod remaining-number 10))))))
+
+(defn digital-root [number]
+  (loop [current-digital-root number]
+    (cond (digit? current-digital-root) current-digital-root
+          :else (recur (sum-of-digits current-digital-root)))))
+
+(print (digital-root 9875))
