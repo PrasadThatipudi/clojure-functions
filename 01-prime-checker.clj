@@ -7,12 +7,12 @@
 (defn divisible? [number divisor] (= (mod number divisor) 0))
 
 (defn is-prime [number]
-  (if (<= number 2)
-    (if (= number 2) true false)
-    (if (even? number)
-      false
-      (loop [divisor 3]
-        (if (<= number divisor) true
-            (if (divisible? number divisor) false (recur (+ divisor 2))))))))
+  (cond
+    (= number 2) true
+    (< number 2) false
+    (even? number) false
+    :else (loop [divisor 3]
+            (if (<= number divisor) true
+                (if (divisible? number divisor) false (recur (+ number 2)))))))
 
-(print (is-prime 13))
+(print (is-prime 15))
