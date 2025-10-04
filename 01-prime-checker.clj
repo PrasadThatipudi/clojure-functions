@@ -4,4 +4,9 @@
 ;; The function should return true if the number is prime, false otherwise.
 ;; Example: 17 -> true, 25 -> false, 2 -> true, 1 -> false
 
-(defn is-prime [number])
+(defn is-prime [number]
+  (if (<= number 2)
+    (if (= number 2) true false)
+    (if (even? number) false true)))
+
+(print (is-prime 2))
