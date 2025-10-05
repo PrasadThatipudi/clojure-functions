@@ -13,8 +13,11 @@
     (even? number) false
     :else (loop [divisor 3]
             (cond
-              (<= number divisor) true
+              (< (Math/sqrt number) divisor) true
               (divisible? number divisor) false
-              :else (recur (+ number 2))))))
+              :else (recur (+ divisor 2))))))
 
-(print (prime? 15))
+(loop [counter 1]
+  (cond (> counter 100) 0
+        (true? (prime? counter)) (or (println counter) (recur (inc counter)))
+        :else (recur (inc counter))))
