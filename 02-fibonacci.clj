@@ -5,8 +5,8 @@
 ;; Example: n = 7 -> 13 (sequence: 0,1,1,2,3,5,8,13), n = 0 -> 0, n = 1 -> 1
 
 (defn fibonacci [number]
-  (loop [first 0 second 1 counter 1]
-    (if (= number counter) first
-        (recur second (+ first second) (inc counter)))))
+  (loop [current 0 next 1 counter 0]
+    (if (= number counter) current
+        (recur next (+ current next) (inc counter)))))
 
-(print (fibonacci 8))
+(print (fibonacci 0))
