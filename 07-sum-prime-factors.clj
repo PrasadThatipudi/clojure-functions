@@ -15,7 +15,7 @@
             (cond
               (<= number divisor) true
               (divisible? number divisor) false
-              :else (recur (+ number 2))))))
+              :else (recur (+ divisor 2))))))
 
 (defn sum-of-prime-factors [number]
   (loop [divisor 1 sum 0]
@@ -25,4 +25,4 @@
       (recur (inc divisor) (+ sum divisor))
       :else (recur (inc divisor) sum))))
 
-(print (sum-of-prime-factors 12))
+(print (sum-of-prime-factors 8))
