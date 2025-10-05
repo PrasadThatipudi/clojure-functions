@@ -5,4 +5,15 @@
 ;; Implement using the recursive formula with memoization for efficiency.
 ;; Example: C(4) = 14, C(5) = 42, C(0) = 1, C(1) = 1, C(2) = 2, C(3) = 5
 
-(defn catalan-number [n])
+(defn catalan-number [number]
+  (cond (= number 0) 1
+        :else
+        (loop [counter 0 current-catalan 0]
+          (cond (= number counter) current-catalan
+                :else
+                (recur (inc counter)
+                       (+ current-catalan
+                          (* (catalan-number counter)
+                             (catalan-number (- number counter 1)))))))))
+
+(print (catalan-number 5))
